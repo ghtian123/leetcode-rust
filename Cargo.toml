@@ -2,5 +2,6 @@
 [workspace]
 
 members = [
-    "two_sum_01"
+    "two_sum_01",
+    "add_two_numbers_02"
 ]
