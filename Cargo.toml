@@ -3,5 +3,7 @@
 
 members = [
     "two_sum_01",
-    "add_two_numbers_02"
+    "add_two_numbers_02",
+    "length_of_longest_substring_03",
+    "min_window_76"
 ]
