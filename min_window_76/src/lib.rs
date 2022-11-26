@@ -4,38 +4,48 @@ impl Solution {
     pub fn min_window(s: String, t: String) -> String {
         use std::collections::HashMap;
 
-        let sl = s.len();
-        let tl = t.len();
-
-        if sl == 0 || tl == 0 || sl < tl {
-            return "".to_string();
+        let mut ans = "";
+        let mut ans_len = s.len();
+        let mut count = t.len();
+        let mut map = HashMap::new();
+        for c in t.chars() {
+            let cnt = map.entry(c).or_insert(0);
+            *cnt += 1;
         }
 
-        let sb = s.as_bytes();
-        let tb = s.as_bytes();
+        let ss = s.chars().collect::<Vec<char>>();
 
-        let mut tFreq = HashMap::new();
-
-        for i in tb {
-            let count = tFreq.entry(*i).or_insert(0);
-            *count += 1;
-        }
-
-        let mut instance = 0;
-        let mut min_len = sl + 1;
-
-        let mut begin = 0;
-
-        let mut left = 0;
-        let mut right = 0;
-
-        for right in 0..sl {
-            if !tFreq.contains_key(&sb[right]) {
+        let mut l = 0;
+        for r in 0..ss.len() {
+            if !map.contains_key(&ss[r]) {
                 continue;
             }
-        }
+            if let Some(n) = map.get_mut(&ss[r]) {
+                *n -= 1;
+                if *n >= 0 {
+                    count -= 1;
+                }
+            }
 
-        todo!()
+            while count == 0 {
+                if ans_len > r - l {
+                    ans = &s[l..=r];
+                    ans_len = r - l + 1;
+                }
+                if !map.contains_key(&ss[l]) {
+                    l += 1;
+                    continue;
+                }
+                if let Some(n) = map.get_mut(&ss[l]) {
+                    *n += 1;
+                    if *n > 0 {
+                        count += 1;
+                    }
+                }
+                l += 1;
+            }
+        }
+        ans.to_string()
     }
 }
 

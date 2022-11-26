@@ -5,5 +5,8 @@ members = [
     "two_sum_01",
     "add_two_numbers_02",
     "length_of_longest_substring_03",
-    "min_window_76"
+    "min_window_76",
+    "max_area_11",
+    "longest_palindrome_5",
+    "reverse_list_206"
 ]
