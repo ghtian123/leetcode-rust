@@ -9,5 +9,6 @@ members = [
     "max_area_11",
     "longest_palindrome_5",
     "reverse_list_206",
-    "three_sum_15"
+    "three_sum_15",
+    "least_interval_621"
 ]
