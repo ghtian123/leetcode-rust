@@ -8,5 +8,6 @@ members = [
     "min_window_76",
     "max_area_11",
     "longest_palindrome_5",
-    "reverse_list_206"
+    "reverse_list_206",
+    "three_sum_15"
 ]
