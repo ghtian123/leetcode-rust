@@ -21,6 +21,7 @@ struct Solution;
 
 use std::cell::RefCell;
 use std::rc::Rc;
+
 impl Solution {
     pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut res = Vec::new();
