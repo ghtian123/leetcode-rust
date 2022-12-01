@@ -41,6 +41,56 @@ impl Solution {
 
         head.next
     }
+
+    //所有权转移
+    pub fn merge_two_lists1(
+        mut list1: Option<Box<ListNode>>,
+        mut list2: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
+        let mut head = ListNode::new(0);
+
+        let mut curr = &mut head;
+
+        if list1.is_none() && list2.is_some() {
+            curr.next = list2;
+            return head.next;
+        }
+
+        if list1.is_some() && list2.is_none() {
+            curr.next = list1;
+            return head.next;
+        }
+
+        while let (Some(mut l1), Some(mut l2)) = (list1, list2) {
+            if l1.val < l2.val {
+                let next = l1.next.take();
+                curr.next = Some(l1);
+
+                list2 = Some(l2);
+                list1 = next;
+            } else {
+                let next = l2.next.take();
+                curr.next = Some(l2);
+
+                list1 = Some(l1);
+                list2 = next;
+            }
+
+            curr = curr.next.as_mut().unwrap();
+
+            if list1.is_none() && list2.is_some() {
+                curr.next = list2;
+                break;
+            }
+
+            if list1.is_some() && list2.is_none() {
+                curr.next = list1;
+                break;
+            }
+        }
+
+        head.next
+    }
 }
 
 #[cfg(test)]
