@@ -13,5 +13,6 @@ members = [
     "least_interval_621",
     "inorder_traversal_94",
     "longest_common_prefix_14",
-    "is_valid_20"
+    "is_valid_20",
+    "merge_two_lists_21"
 ]
