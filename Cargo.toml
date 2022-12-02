@@ -14,5 +14,6 @@ members = [
     "inorder_traversal_94",
     "longest_common_prefix_14",
     "is_valid_20",
-    "merge_two_lists_21"
+    "merge_two_lists_21",
+    "has_cycle_141"
 ]
