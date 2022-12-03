@@ -15,5 +15,9 @@ members = [
     "longest_common_prefix_14",
     "is_valid_20",
     "merge_two_lists_21",
-    "has_cycle_141"
+    "has_cycle_141",
+    "single_number_136",
+    "climb_stairs_70",
+    "max_profit_121",
+    "max_depth_104"
 ]
