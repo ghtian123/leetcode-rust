@@ -19,5 +19,9 @@ members = [
     "single_number_136",
     "climb_stairs_70",
     "max_profit_121",
-    "max_depth_104"
+    "max_depth_104",
+    "is_symmetric_101",
+    "get_intersection_node_160",
+    "is_palindrome_234",
+    "move_zeroes_283"
 ]
