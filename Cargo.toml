@@ -23,5 +23,7 @@ members = [
     "is_symmetric_101",
     "get_intersection_node_160",
     "is_palindrome_234",
-    "move_zeroes_283"
+    "move_zeroes_283",
+    "majority_element_169",
+    "merge_trees_617"
 ]
