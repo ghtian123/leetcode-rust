@@ -25,5 +25,8 @@ members = [
     "is_palindrome_234",
     "move_zeroes_283",
     "majority_element_169",
-    "merge_trees_617"
+    "merge_trees_617",
+    "min_stack_155",
+    "trie_208",
+    "lru_146"
 ]
