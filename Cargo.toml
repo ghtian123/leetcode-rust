@@ -28,5 +28,6 @@ members = [
     "merge_trees_617",
     "min_stack_155",
     "trie_208",
-    "lru_146"
+    "lru_146",
+    "lru_safe_146"
 ]
