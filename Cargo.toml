@@ -29,5 +29,6 @@ members = [
     "min_stack_155",
     "trie_208",
     "lru_146",
-    "lru_safe_146"
+    "lru_safe_146",
+    "lru_weak_146"
 ]

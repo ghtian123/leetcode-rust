@@ -5,13 +5,21 @@ struct Trie {}
  * If you need a mutable reference, change it to `&mut self` instead.
  */
 impl Trie {
-    fn new() -> Self {}
+    fn new() -> Self {
+        todo!()
+    }
 
-    fn insert(&self, word: String) {}
+    fn insert(&self, word: String) {
+        todo!()
+    }
 
-    fn search(&self, word: String) -> bool {}
+    fn search(&self, word: String) -> bool {
+        todo!()
+    }
 
-    fn starts_with(&self, prefix: String) -> bool {}
+    fn starts_with(&self, prefix: String) -> bool {
+        todo!()
+    }
 }
 
 /**

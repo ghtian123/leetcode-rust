@@ -173,7 +173,6 @@ struct LRUCache<T> {
     list: LinkedList<T>,
 }
 
-
 impl LRUCache<(i32, i32)> {
     fn new(capacity: i32) -> Self {
         Self {
@@ -221,5 +220,3 @@ impl LRUCache<(i32, i32)> {
         }
     }
 }
-
-
