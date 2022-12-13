@@ -1,4 +1,8 @@
-struct Trie {}
+#[derive(Default, Clone)]
+struct Trie {
+    children: [Option<Box<Trie>>; 26],
+    is_end: bool,
+}
 
 /**
  * `&self` means the method takes an immutable reference.
@@ -6,19 +10,38 @@ struct Trie {}
  */
 impl Trie {
     fn new() -> Self {
-        todo!()
+        Self::default()
     }
 
-    fn insert(&self, word: String) {
-        todo!()
+    fn insert(&mut self, word: String) {
+        let mut node = self;
+
+        for i in word.bytes().into_iter().map(|x| (x - b'a') as usize) {
+            node = node.children[i].get_or_insert_with(|| Box::new(Self::default()));
+        }
+        node.is_end = true;
     }
 
-    fn search(&self, word: String) -> bool {
-        todo!()
+    fn search(&mut self, word: String) -> bool {
+        let node = self.search_prefix(word);
+        node.is_some() && node.unwrap().is_end
     }
 
-    fn starts_with(&self, prefix: String) -> bool {
-        todo!()
+    fn starts_with(&mut self, prefix: String) -> bool {
+        self.search_prefix(prefix).is_some()
+    }
+
+    fn search_prefix(&mut self, prefix: String) -> Option<Box<Trie>> {
+        let mut node = self;
+
+        for i in prefix.bytes().into_iter().map(|x| (x - b'a') as usize) {
+            if node.children[i].is_none() {
+                return None;
+            }
+            node = node.children[i].as_mut().unwrap();
+        }
+
+        return Some(Box::new(node.clone()));
     }
 }
 
