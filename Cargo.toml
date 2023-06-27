@@ -30,5 +30,8 @@ members = [
     "trie_208",
     "lru_146",
     "lru_safe_146",
-    "lru_weak_146"
+    "lru_weak_146",
+    "sort_list_148",
+    "invert_tree_226",
+    "can_i_win_464"
 ]
